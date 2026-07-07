@@ -4,7 +4,7 @@ import { Layers, Plus, Trash2, Calendar } from 'lucide-react';
 const INITIAL_COLUMNS = [
   { id: 'todo', title: 'Backlog Tasks' },
   { id: 'progress', title: 'In Flight' },
-  { id: 'done', title: 'Shipped (Prod)' }
+  { id: 'done', title: 'Shipped' }
 ];
 
 const INITIAL_TASKS = [
@@ -63,19 +63,19 @@ export default function App() {
             <div className="flex items-center gap-2 text-violet-400 font-semibold text-sm mb-1">
               <Layers className="w-4 h-4" /> Local-First System Strategy
             </div>
-            <h1 className="text-2xl font-bold tracking-tight">State Isolation Matrix</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Local Kanban</h1>
           </div>
           
           <form onSubmit={createCard} className="flex gap-2 w-full sm:w-auto">
             <input
               type="text"
-              placeholder="Queue backlog title..."
+              placeholder="Start typing here..."
               value={newTaskTitle}
               onChange={(e) => setNewTaskTitle(e.target.value)}
               className="bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg text-sm outline-none focus:border-violet-500 text-zinc-100 placeholder-zinc-500 w-full sm:w-60"
             />
-            <button type="submit" className="bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap">
-              <Plus className="w-3.5 h-3.5" /> Append Task
+            <button type="submit" className="bg-violet-600 hover:bg-violet-500 text-white font-medium text-xs rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap">
+              <Plus className="w-3.5 h-3.5" />Add Task
             </button>
           </form>
         </header>
